@@ -11,7 +11,8 @@ def login_user(request):
             return redirect('Templates/student-login.html')
         else:
             return render(request,'Templates/index.html',{'error':'Invalid username or password'})
-    return render(request,'Templates/index.html')
+    else :
+        return render(request,'Templates/index.html')
 
 def my_view(request):
     return render(request, 'Templates/index.html')
