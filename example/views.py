@@ -31,4 +31,4 @@ def create_stu(request):
 
 def my_data(request):
     data=Student.objects.all()
-    return render(request,'Templates/student-login.html')
+    return render(request,'Templates/student-login.html',{'data':data})
