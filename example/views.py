@@ -30,5 +30,5 @@ def create_stu(request):
         return redirect('student-login.html')
 
 def my_data(request):
-    data=Student.objects.all().values()
+    data=Student.objects.all()
     return render(request,'Templates/student-login.html')
