@@ -1,5 +1,5 @@
 # example/urls.py
-from django.urls import path
+from django.urls import path,include
 from django.contrib import admin
 from example.views import my_view,my_data
 
