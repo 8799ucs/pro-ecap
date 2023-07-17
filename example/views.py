@@ -1,5 +1,5 @@
 # example/views.py
-from .models import Student
+from examples.models import Student
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 
