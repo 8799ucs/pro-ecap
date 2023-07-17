@@ -3,6 +3,21 @@ from examples.models import Student
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 
+
+def create_user(request):
+    # Get a reference to the Firestore database
+    db = firestore.client()
+
+    # Perform database operations
+    doc_ref = db.collection('users').document('new_user')
+    doc_ref.set({
+        'username': '21241A6737',
+        'password': '21241A6737',
+        'name':'Nagula Navya sri',
+        'phone':'7893762846',
+    })
+
+
 def login_user(request):
     if request.method=='POST' :
         username = request.POST['username']
@@ -18,17 +33,3 @@ def login_user(request):
 
 def my_view(request):
     return render(request, 'Templates/index.html')
-
-def create_stu(request):
-    if request.method=='POST':
-        username=request.POST['username']
-        password=request.POST['password']
-        name=request.POST['name']
-        phone=request.POST['phone']
-        stuser=Studentuser.objects.create_user(username=username, password=password, name=name, phone=phone)
-        stuser.save()
-        return redirect('student-login.html')
-
-def my_data(request):
-    data=Student.objects.all()
-    return render(request,'Templates/student-login.html',{'data':data})
