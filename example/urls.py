@@ -8,5 +8,4 @@ urlpatterns = [
     path('admin/',admin.site.urls),
     path('', my_view),
     path('login/',login_user),
-    path('Templates/student-login/',my_data),
 ]
