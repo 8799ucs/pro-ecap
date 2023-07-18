@@ -22,7 +22,13 @@ def create_user(request):
 
     return render(request, 'Templates/create_user.html')
 
+def student_list(request):
+    students = Student.objects.all()
+    return render(request, 'Template/student_list.html', {'students': students})
 
+def teacher_list(request):
+    teachers = Teacher.objects.all()
+    return render(request, 'Templates/teacher_list.html', {'teachers': teachers})
 
 def my_view(request):
     return render(request, 'Templates/index.html')
