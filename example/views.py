@@ -1,37 +1,28 @@
 # example/views.py
 from django.shortcuts import render, redirect
 from example.models import Student, Teacher
-from django.contrib.auth import get_user_model
 
-def student_list(request):
-    students = Student.objects.all()
-    return render(request, 'Template/student_list.html', {'students': students})
-
-def create_student(request):
+def create_user(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        # Add additional fields as needed
-        User = get_user_model()
-        user = User.objects.create_user(username=username, password=password)
-        # Save additional fields if necessary
-        return redirect('home')  # Replace 'home' with your desired URL
-    return render(request, 'Template/index.html')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        is_student = bool(int(request.POST.get('is_student', 0)))
 
-def teacher_list(request):
-    teachers = Teacher.objects.all()
-    return render(request, 'Templates/teacher_list.html', {'teachers': teachers})
+        # Create the appropriate user instance based on the is_student parameter
+        if is_student:
+            user = Student.objects.create_user(username=username)
+        else:
+            user = Teacher.objects.create_user(username=username)
 
-def create_employee(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        # Add additional fields as needed
-        User = get_user_model()
-        user = User.objects.create_user(username=username, password=password)
-        # Save additional fields if necessary
-        return redirect('home')  # Replace 'home' with your desired URL
-    return render(request, 'Templates/index.html')
+        # Set the user's password
+        user.set_password(password)
+        user.save()
+
+        return redirect('login')  # Redirect to the login page after user creation
+
+    return render(request, 'create_user.html')
+
+
 
 def my_view(request):
     return render(request, 'Templates/index.html')
