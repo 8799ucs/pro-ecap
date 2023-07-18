@@ -18,9 +18,9 @@ def create_user(request):
         user.set_password(password)
         user.save()
 
-        return redirect('login')  # Redirect to the login page after user creation
+        return redirect('Templates/index.html')  # Redirect to the login page after user creation
 
-    return render(request, 'create_user.html')
+    return render(request, 'Templates/create_user.html')
 
 
 
