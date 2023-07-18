@@ -8,7 +8,7 @@ class Student(AbstractUser):
   name=models.CharField(max_length=100)
   phone=models.CharField(max_length=100)
 
-class Student(AbstractUser):
+class Teacher(AbstractUser):
   username=models.CharField(max_length=100)
   password=models.CharField(max_length=100)
   name=models.CharField(max_length=100)
