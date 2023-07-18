@@ -7,5 +7,10 @@ class Student(AbstractUser):
   password=models.CharField(max_length=100)
   name=models.CharField(max_length=100)
   phone=models.CharField(max_length=100)
-  def __str__(self):
-    return self.username
+
+class Student(AbstractUser):
+  username=models.CharField(max_length=100)
+  password=models.CharField(max_length=100)
+  name=models.CharField(max_length=100)
+  phone=models.CharField(max_length=100)
+
