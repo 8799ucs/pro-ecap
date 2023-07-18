@@ -182,10 +182,11 @@ document.getElementById('studentButton').addEventListener('click', function() {
                 </div>
 
                 <div class="field input-field">
-                    <input type="password" placeholder="Paaassword" class="password">
+                    <input type="password" placeholder="Password" class="password">
                     <i class='bx bx-hide eye-icon'></i>
                 </div>
-
+<a href="{% url 'create_user' %}">Create User</a>
+		    
                 <div id="employeeButton" class="field button-field">
                     <button>Login</button>
                 </div>
@@ -206,7 +207,7 @@ document.getElementById('studentButton').addEventListener('click', function() {
                     <input type="password" placeholder="Password" class="password">
                     <i class='bx bx-hide eye-icon'></i>
                 </div>
-
+<a href="{% url 'create_user' %}">Create User</a>
                 <div id="studentButton" class="field button-field">
                     <button>Login</button>
                 </div>
