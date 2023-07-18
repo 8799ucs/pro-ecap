@@ -1,9 +1,9 @@
 # example/urls.py
 from django.urls import path
-from example.views import my_view, create_user, login_user
+from example import views 
 
 urlpatterns = [
     path('', my_view),
-    path('',create_user),
-    path('login/',login_user),
+    path('students/', views.student_list, name='student_list'),
+    path('teachers/', views.teacher_list, name='teacher_list'),
 ]
