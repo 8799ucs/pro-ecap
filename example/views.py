@@ -31,7 +31,7 @@ def create_employee(request):
         user = User.objects.create_user(username=username, password=password)
         # Save additional fields if necessary
         return redirect('home')  # Replace 'home' with your desired URL
-    return render(request, 'create_employee.html')
+    return render(request, 'index.html')
 
 def my_view(request):
     return render(request, 'Templates/index.html')
