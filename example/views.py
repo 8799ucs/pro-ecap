@@ -16,7 +16,7 @@ def create_student(request):
         user = User.objects.create_user(username=username, password=password)
         # Save additional fields if necessary
         return redirect('home')  # Replace 'home' with your desired URL
-    return render(request, 'index.html')
+    return render(request, 'Template/index.html')
 
 def teacher_list(request):
     teachers = Teacher.objects.all()
@@ -31,7 +31,7 @@ def create_employee(request):
         user = User.objects.create_user(username=username, password=password)
         # Save additional fields if necessary
         return redirect('home')  # Replace 'home' with your desired URL
-    return render(request, 'index.html')
+    return render(request, 'Templates/index.html')
 
 def my_view(request):
     return render(request, 'Templates/index.html')
