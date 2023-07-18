@@ -1,0 +1,26 @@
+<!-- create_user.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create User</title>
+    <!-- Include CSS and other dependencies -->
+</head>
+<body>
+    <h1>Create User</h1>
+
+    <form method="post" action="{% url 'create_user' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <label for="is_student">Is Student:</label>
+        <input type="checkbox" name="is_student" value="1"><br><br>
+
+        <input type="submit" value="Create User">
+    </form>
+</body>
+</html>
