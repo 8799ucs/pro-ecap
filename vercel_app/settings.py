@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'example/datab.sqlite3',
+        'NAME': 'example/bdata.sqlite3',
         'USER': '8799ucs',
         'PASSWORD': 'ucs@8799',
         'HOST': 'localhost',  # Change to your database server's host
@@ -95,7 +95,7 @@ DATABASES = {
     },
   'tdata':{
        'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': 'example/datab.sqlite3',
+       'NAME': 'example/tdata.sqlite3',
        'USER': '8799ucs',
        'PASSWORD': 'ucs@8799',
        'HOST': 'localhost',  # Change to your database server's host
