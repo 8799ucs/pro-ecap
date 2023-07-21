@@ -16,7 +16,8 @@ import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -85,24 +86,16 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
 DATABASES = {
-   'default': {
+    'default': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
         'NAME': os.path.join(BASE_DIR, 'bdata.db'),
-        'PASSWORD': '',
-        'PORT': '',
-        'USER':''
     },
-  'tdata':{
-       'CONN_MAX_AGE': 0,
+    'tdata': {
+        'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
         'NAME': os.path.join(BASE_DIR, 'tdata.db'),
-        'PASSWORD': '',
-        'PORT': '',
-        'USER':''
-   },
+    },
 }
 
 
