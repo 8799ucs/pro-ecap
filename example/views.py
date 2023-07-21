@@ -67,4 +67,5 @@ def teacher_view(request):
     cursor = dbase.cursor()
     cursor.execute("SELECT * FROM Teacher WHERE username = ?", (username,))
     teachers= cursor.fetchone()
-    return render(request,'templates/teacher_list.html',{'data': teachers})
+    t=teachers[2]
+    return render(request,'templates/teacher_list.html',{'data': t})
