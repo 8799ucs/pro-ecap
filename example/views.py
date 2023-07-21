@@ -6,14 +6,14 @@ from example.models import Student, Teacher
 from django.http import JsonResponse
 from django.contrib.auth.forms import AuthenticationForm 
 from . import *
-
+import os
 def view(request):
     return render(request,'templates/index.html')
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username','')
         password = request.POST.get('password','')
-        dbase = sqlite3.connect('bdata.db')
+        dbase = sqlite3.connect(os.path.join(settings.BASE_DIR, 'bdata.db'))
         cursor = dbase.cursor()
         cursor.execute("SELECT * FROM Student WHERE username = ?", (username,))
         user_data = cursor.fetchone()
