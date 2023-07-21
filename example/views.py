@@ -4,9 +4,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from example.models import Student, Teacher
 from django.http import JsonResponse
-from django.contrib.auth.forms import AuthenticationForm
-from example import create,tcreate 
-from . import *
+from django.contrib.auth.forms import AuthenticationForm 
+from example import *
 
 def view(request):
     return render(request,'templates/index.html')
