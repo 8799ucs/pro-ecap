@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login
 from example.models import Student, Teacher
 from django.http import JsonResponse
 from django.contrib.auth.forms import AuthenticationForm
-from example import create, tcreate
 from . import *
 
 def view(request):
@@ -24,21 +23,18 @@ def login_view(request):
                 name = user_data[2]
                 phone = user_data[3]
                 if password == db_password:
-                    # Successful login logic
                     return student_view(request)
                 else:
-                    #return JsonResponse({"status":"user_data"})
                     return render(request, 'templates/index.html')
         else:
             return render(request, 'templates/index.html')
 
     else:
-        return render(request, 'templates/student_list.html')
+        return render(request, 'templates/index.html')
 def sign_view(request):
     if request.method == 'POST':
         username = request.POST.get('username1','')
         password = request.POST.get('password1','')
-        # Connect to your custom users database
         dbase = sqlite3.connect('tdata.sqlite3')
         cursor = dbase.cursor()
         cursor.execute("SELECT * FROM Teacher WHERE username = ?", (username,))
@@ -49,14 +45,11 @@ def sign_view(request):
                 name = user_data[2]
                 phone = user_data[3]
                 if password == db_password:
-                    # Successful login logic
                     return teacher_view(request)
                 else:
                     return render(request,'templates/index.html')
-                    #return login_view(request)
         else:
             return login_view(request)
-            #return render(request, 'templates/index.html')
 
     else:
         return render(request, 'templates/index.html')
