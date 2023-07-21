@@ -14,7 +14,7 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username','')
         password = request.POST.get('password','')
-        dbase = sqlite3.connect('datab.sqlite3')
+        dbase = sqlite3.connect('bdata.sqlite3')
         cursor = dbase.cursor()
         cursor.execute("SELECT * FROM Student WHERE username = ?", (username,))
         user_data = cursor.fetchone()
@@ -62,7 +62,7 @@ def sign_view(request):
         return render(request, 'templates/index.html')
 def student_view(request):
     username = request.POST['username']
-    dbase = sqlite3.connect('datab.sqlite3')
+    dbase = sqlite3.connect('bdata.sqlite3')
     cursor = dbase.cursor()
     cursor.execute("SELECT * FROM Student WHERE username = ?", (username,))
     students = cursor.fetchone()
