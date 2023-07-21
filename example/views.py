@@ -13,7 +13,7 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username','')
         password = request.POST.get('password','')
-        dbase = sqlite3.connect('bdata.sqlite3')
+        dbase = sqlite3.connect('bdata.db')
         cursor = dbase.cursor()
         cursor.execute("SELECT * FROM Student WHERE username = ?", (username,))
         user_data = cursor.fetchone()
@@ -35,7 +35,7 @@ def sign_view(request):
     if request.method == 'POST':
         username = request.POST.get('username1','')
         password = request.POST.get('password1','')
-        dbase = sqlite3.connect('tdata.sqlite3')
+        dbase = sqlite3.connect('tdata.db')
         cursor = dbase.cursor()
         cursor.execute("SELECT * FROM Teacher WHERE username = ?", (username,))
         user_data = cursor.fetchone()
@@ -55,7 +55,7 @@ def sign_view(request):
         return render(request, 'templates/index.html')
 def student_view(request):
     username = request.POST['username']
-    dbase = sqlite3.connect('bdata.sqlite3')
+    dbase = sqlite3.connect('bdata.db')
     cursor = dbase.cursor()
     cursor.execute("SELECT * FROM Student WHERE username = ?", (username,))
     students = cursor.fetchone()
@@ -63,7 +63,7 @@ def student_view(request):
     return render(request,'templates/student_list.html',{'data': s})
 def teacher_view(request):
     username = request.POST['username1']
-    dbase = sqlite3.connect('tdata.sqlite3')
+    dbase = sqlite3.connect('tdata.db')
     cursor = dbase.cursor()
     cursor.execute("SELECT * FROM Teacher WHERE username = ?", (username,))
     teachers= cursor.fetchone()
