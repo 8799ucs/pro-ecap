@@ -1,7 +1,7 @@
 import sqlite3
 from example import tdata
 
-abase = sqlite3.connect('tdata.sqlite3') # Open a database File
+abase = sqlite3.connect('tdata.db') # Open a database File
 print('Database opened')
 
 abase.execute(''' CREATE TABLE IF NOT EXISTS teacher(
