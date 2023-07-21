@@ -1,4 +1,5 @@
 import sqlite3
+from example import bdata
 
 dbase = sqlite3.connect('bdata.sqlite3') # Open a database File
 print('Database opened')
