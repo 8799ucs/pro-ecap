@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'datab.sqlite3',
+        'NAME': BASE_DIR / 'bdata.sqlite3',
     },
   'tdata':{
        'ENGINE': 'django.db.backends.sqlite3',
