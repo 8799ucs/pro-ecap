@@ -1,4 +1,5 @@
 import sqlite3
+from . import *
 
 dbase = sqlite3.connect('datab.sqlite3') # Open a database File
 print('Database opened')
