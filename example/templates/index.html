@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Responsive Login and Signup Form </title>
+
+        <!-- CSS -->
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+        .image-container {
+            height: auto;
+            display: flex;
+            flex: 1; /* Take up the remaining width */
+        }
+
+        .image-container img {
+            width: 100%; /* Set the image width to 100% */
+            height: 40%; /* Let the height scale proportionally */
+        }
+    .container{
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex;
+        background-color: #daebf8;
+        column-gap: 30px;
+        padding-left: 250px
+    }
+    .form{
+        max-width: 430px;
+        width: 100%;
+        padding: 30px;
+        border-radius: 6px;
+        background: #ffffff;
+    
+    }
+    .forms.show-signup .form.signup {
+    opacity: 1;
+    pointer-events: auto;
+    }
+
+    .forms.show-signup .form.login {
+    opacity: 0;
+    pointer-events: none;
+    }
+
+    .forms {
+    display: flex; 
+    column-gap:150px;
+    }
+    header{
+        font-size: 28px;
+        font-weight: 600;
+        color: #232836;
+        text-align: center;
+    }
+    form{
+        margin-top: 30px;
+    }
+    .form .field{
+        position: relative;
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    .field input,
+    .field button{
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 6px;
+    }
+    .field input{
+        outline: none;
+        padding: 0 15px;
+        border: 1px solid#CACACA;
+    }
+    .field input:focus{
+        border-bottom-width: 2px;
+    }
+    .eye-icon{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #8b8b8b;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .field button{
+        color: #fff;
+        background-color: #0171d3;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .field button:hover{
+        background-color: #016dcb;
+    }
+    .form-link{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .form-link span,
+    .form-link a{
+        font-size: 14px;
+        font-weight: 400;
+        color: #232836;
+    }
+    .form a{
+        color: #0171d3;
+        text-decoration: none;
+    }
+    .form-content a:hover{
+        text-decoration: underline;
+    }
+    .line{
+        position: relative;
+        height: 1px;
+        width: 100%;
+        margin: 36px 0;
+        background-color: #d4d4d4;
+    }
+    .line::before{
+        content: 'Or';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #FFF;
+        color: #8b8b8b;
+        padding: 0 15px;
+    }
+
+    @media screen and (max-width: 400px) {
+        .form{
+            padding: 20px 10px;
+        }
+        
+    }
+</style>
+<script>
+    /*$(document).ready(function() {
+        // Function to handle login for both students and employees
+        function handleLogin(url, usernameField, passwordField, redirectUrl) {
+            // Get the username and password values
+            var username = $(usernameField).val();
+            var password = $(passwordField).val();
+
+            // Create a data object to send in the request body
+            var data = {
+                'username': username,
+                'password': password
+            };
+
+            $.ajax({
+                type: "POST",
+                url: url, // Use the correct URL for the login view
+                data: data,
+                success: function(data) {
+                    console.log("Login view response:", data);
+                    // Check the response data to determine if login was successful
+                    if (data.status === "success") {
+                        // Redirect to the desired page
+                        console.log("username")
+                        window.location.href = redirectUrl;
+                    } else {
+                        // Handle invalid login credentials, show an error message, etc.
+                        console.log("Invalid username or password");
+                    }
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    // Handle any errors that occurred during the AJAX request
+                    console.log("Error:", errorThrown);
+                }
+            });
+        }*/
+
+        $("#studentButton").click(function() {
+            handleLogin(
+                "/login/", // Use the correct URL for the login view
+                "input[name='username']", // Student username field
+                "input[name='password']", // Student password field
+                "/student_view/" // Use the correct URL for the student view
+            );
+        });
+
+        $("#employeeButton").click(function() {
+            handleLogin(
+                "/signin/", // Use the correct URL for the login view
+                "input[name='username1']", // Employee username field
+                "input[name='password1']", // Employee password field
+                "/teacher_view/" // Use the correct URL for the employee view
+            );
+        });
+    //});
+</script>
+
+    </head>
+    <body>
+	    <div class="image-container">
+  <img src="https://firebasestorage.googleapis.com/v0/b/ecap-b24e9.appspot.com/o/title_head.jpg?alt=media&token=d90dbd15-8115-4ead-b23d-bd4b162e1ff9" alt="Example Image">
+  </div>
+	    <div class="image-container">
+	    <img src="https://firebasestorage.googleapis.com/v0/b/ecap-b24e9.appspot.com/o/body.jpg?alt=media&token=90a365a3-b691-4363-b3ba-08b83f673dbf" alt="Example Image">
+	    </div>
+		    <section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <header>Employee Login</header>
+            <form method="POST" >
+                {% csrf_token %}
+                <!-- First Login Form -->
+                <div class="field input-field">
+                    <input type="text" name="username1" placeholder="Username" class="input">
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" name="password1" placeholder="Password" class="password">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div id="employeeButton" class="field button-field">
+                    <button>Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form login">
+        <div class="form-content">
+            <header>Student Login</header>
+            <form method="POST">
+		    {% csrf_token %}
+                <!-- Second Login Form -->
+                <div class="field input-field">
+                    <input type="text" name="username" placeholder="Username" class="input">
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" name="password" placeholder="Password" class="password">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div id="studentButton" class="field button-field">
+                    <button>Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+        
+    </body>
+</html>
