@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login
 from example.models import Student, Teacher
 from django.http import JsonResponse
 from django.contrib.auth.forms import AuthenticationForm 
-from example import tdata,bdata
 from . import *
 
 def view(request):
