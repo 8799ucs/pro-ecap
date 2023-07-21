@@ -36,10 +36,10 @@ def sign_view(request):
     if request.method == 'POST':
         username = request.POST.get('username1','')
         password = request.POST.get('password1','')
-        dbase = sqlite3.connect(os.path.join(BASE_DIR, 'bdata.db'))
+        dbase = sqlite3.connect(os.path.join(settings.BASE_DIR, 'bdata.db'))
         cursor = dbase.cursor()
         cursor.execute("SELECT * FROM Teacher WHERE username = ?", (username,))
-        user_data = cursor.fetchone(os.path.join(settings.BASE_DIR, 'bdata.db'))
+        user_data = cursor.fetchone()
         if(user_data):
                 db_username = user_data[0]
                 db_password = user_data[1]
