@@ -1,6 +1,6 @@
 import sqlite3
 
-dbase = sqlite3.connect('datab.sqlite3') # Open a database File
+dbase = sqlite3.connect('bdata.sqlite3') # Open a database File
 print('Database opened')
 
 dbase.execute(''' CREATE TABLE IF NOT EXISTS student(
