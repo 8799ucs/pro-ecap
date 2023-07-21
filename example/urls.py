@@ -1,6 +1,6 @@
 # example/urls.py
 from django.urls import path,include,re_path
-from example.views import login_view,student_view,teacher_view,sign_view,view
+from example.views import login_view,student_view,teacher_view,sign_view
 app_name='example'
 urlpatterns = [
     path('login/', login_view,name='login'),
