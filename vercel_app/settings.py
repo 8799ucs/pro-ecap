@@ -85,18 +85,14 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
 DATABASES = {
-    'default': {
+   'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR / 'datab.sqlite3',
     },
-    'student_db': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'student_db.sqlite3'),
-    },
-    'teacher_db': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'teacher_db.sqlite3'),
-    },
+  'tdata':{
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'tdata.sqlite3',
+   },
 }
 
 
