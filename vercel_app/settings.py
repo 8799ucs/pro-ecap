@@ -86,20 +86,22 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 DATABASES = {
    'default': {
+        'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'example/bdata.db',
-        'USER': '8799ucs',
-        'PASSWORD': 'ucs@8799',
-        'HOST': 'localhost',  # Change to your database server's host
+        'HOST': 'localhost',
+        'NAME': os.path.join(BASE_DIR, 'bdata.db'),
+        'PASSWORD': '',
         'PORT': '',
+        'USER':''
     },
   'tdata':{
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': 'example/tdata.db',
-       'USER': '8799ucs',
-       'PASSWORD': 'ucs@8799',
-       'HOST': 'localhost',  # Change to your database server's host
-       'PORT': '',
+       'CONN_MAX_AGE': 0,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'HOST': 'localhost',
+        'NAME': os.path.join(BASE_DIR, 'tdata.db'),
+        'PASSWORD': '',
+        'PORT': '',
+        'USER':''
    },
 }
 
