@@ -89,12 +89,12 @@ DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'bdata.db'),
+        'NAME': os.path.join(BASE_DIR, 'bdata.sqlite3'),
     },
     'tdata': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'tdata.db'),
+        'NAME': os.path.join(BASE_DIR, 'tdata.sqlite3'),
     },
 }
 
