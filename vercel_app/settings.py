@@ -89,15 +89,15 @@ DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'example/bdata.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'example', 'bdata.sqlite3'),
     },
     'tdata': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'example/tdata.sqlite3',
-        
+        'NAME': os.path.join(BASE_DIR, 'example', 'tdata.sqlite3'),
     },
 }
+
 
 
 # Password validation
