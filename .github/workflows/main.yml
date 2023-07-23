@@ -29,7 +29,7 @@ jobs:
 
     # Copy the SQLite database to the writable directory
     - name: Copy SQLite database
-      run: cp db.sqlite3 ${{ runner.temp }}/database/
+      run: cp bdata.sqlite3 ${{ runner.temp }}/database/
 
     - name: Set up Django settings
       run: |
