@@ -4,7 +4,7 @@ from example import tdata
 abase = sqlite3.connect('tdata.db') # Open a database File
 print('Database opened')
 
-abase.execute(''' CREATE TABLE IF NOT EXISTS teacher(
+abase.execute(''' CREATE TABLE IF NOT EXISTS Teacher(
     username VARCHAR UNIQUE NOT NULL,
     password VARCHAR NOT NULL,
     name TEXT NOT NULL,
