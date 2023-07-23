@@ -90,11 +90,19 @@ DATABASES = {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'bdata.sqlite3'),
+        'USER': '8799ucs',
+        'PASSWORD':'ucs@8799',
+        'HOST':'localhost',
+        'PORT':'',
     },
     'tdata': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'tdata.sqlite3'),
+        'USER': '8799ucs',
+        'PASSWORD':'ucs@8799',
+        'HOST':'localhost',
+        'PORT':'',
     },
 }
 
