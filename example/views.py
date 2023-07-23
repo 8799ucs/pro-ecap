@@ -1,5 +1,6 @@
 # example/views.py
 import sqlite3
+import os
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from example.models import Student, Teacher
@@ -36,7 +37,8 @@ def sign_view(request):
     if request.method == 'POST':
         username = request.POST.get('username1','')
         password = request.POST.get('password1','')
-        dbase = sqlite3.connect('tdata.sqlite3')
+        db_path = os.path.join(os.path.dirname(__file__), 'tdata.sqlite3')
+        dbase = sqlite3.connect(db_path)
         cursor = dbase.cursor()
         cursor.execute("SELECT * FROM Teacher WHERE username = ?", (username,))
         user_data = cursor.fetchone()
