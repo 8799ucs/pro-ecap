@@ -35,7 +35,7 @@ jobs:
     - name: Set up Django settings
       run: |
         echo "DATABASES = {
-            'bdata': {
+            'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
                 'NAME': '${{ runner.temp }}/database/bdata.sqlite3',
             },
